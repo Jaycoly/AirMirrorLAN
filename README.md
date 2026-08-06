@@ -42,7 +42,7 @@ AirPlay 广播和快传都会在每次启动时重新获取当前默认路由对
 
 ## 安装运行时
 
-在普通 PowerShell 中运行：
+解压后在该目录中运行 PowerShell ：
 
 ```powershell
 Set-ExecutionPolicy -Scope Process Bypass
