@@ -1,0 +1,40 @@
+{
+  "name": "AirMirrorLAN",
+  "version": "0.4.0",
+  "build_date": "2026-08-06",
+  "target": "Windows 10/11 x64",
+  "gui": {
+    "runtime": "Python 3.12.13",
+    "packager": "PyInstaller 6.16.0",
+    "file": "AirMirrorLAN.exe",
+    "sha256": "8B17FAC2AA3CCF7DE2F171D928BA71BDB349798165D29343D75D4B92479D9FB0"
+  },
+  "receiver": {
+    "name": "UxPlay",
+    "version": "1.74",
+    "source_archive": "vendor/UxPlay-master.zip",
+    "source_sha256": "7FDA6A6BF7227063388E67F7ADB15ADA222A5EEE5E45B139C881DB8F15E655A6",
+    "patch": "Recompute the active default-route LAN IPv4 on every receiver start and pass it through UXPLAY_MDNS_IPV4"
+  },
+  "media_runtime": {
+    "name": "GStreamer",
+    "version": "1.28.5",
+    "distribution": "MSYS2 UCRT64",
+    "high_resolution_mode": "3840x2160 at 30 fps using HEVC with H.264 fallback",
+    "display_modes": ["fit complete phone frame", "stretch to fill window"]
+  },
+  "quick_share": {
+    "protocol": "local HTTP with six-digit session code and HttpOnly session cookie",
+    "port": 8788,
+    "bind": "preferred active LAN IPv4 only",
+    "scope": "user-selected folder and descendants",
+    "operations": ["browse", "upload", "create folder", "inline read", "download"],
+    "single_file_upload_limit": "20 GB"
+  },
+  "isolation": {
+    "config_dir": "%APPDATA%/AirMirrorLAN-v0.4",
+    "recordings_dir": "%USERPROFILE%/Videos/AirMirrorLAN-v0.4",
+    "default_share_dir": "%USERPROFILE%/Downloads/AirMirrorLAN-v0.4-Share"
+  },
+  "license": "GPL-3.0-only"
+}
